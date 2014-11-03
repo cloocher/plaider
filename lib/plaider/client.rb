@@ -1,7 +1,12 @@
+require 'net/https'
+require 'json'
+
 module Plaider
   class Client
 
     BASE_URL = 'https://tartan.plaid.com'
+
+    DATE_FORMAT = '%Y-%m-%d'
 
     OPEN_TIMEOUT = 15
     READ_TIMEOUT = 120
@@ -39,12 +44,15 @@ module Plaider
     end
 
     def balance
-      get('/balance')
+      post('/balance')
     end
 
     def add_user(institution_type, username, password, email)
       validate(institution_type: institution_type, username: username, password: password, email: email)
-      post('/connect', {type: institution_type, username: username, password: password, email: email})
+      response = post('/connect', {type: institution_type, username: username, password: password, email: email})
+      status_code = response[:status_code].to_i
+      @access_token = response[:result][:access_token] if [200, 201].include?(status_code)
+      response
     end
 
     def user_confirmation(mfa)
@@ -53,44 +61,52 @@ module Plaider
     end
 
     def transactions(account_id = nil, start_date = nil, end_date = nil, pending = false)
-      body = {}
-      body[:account_id] = account_id if account_id
-      body[:gte] = account_id if start_date
-      body[:lte] = account_id if end_date
-      body[:pending] = account_id if pending
-      post('/connect/get', body)
+      params = {}
+      params[:account_id] = account_id if account_id
+      params[:gte] = format_date(start_date)
+      params[:lte] = format_date(end_date)
+      params[:pending] = account_id if pending
+      post('/connect/get', params)
     end
 
     def update_user(username, password)
       validate(username: username, password: password)
-      put('/connect', {username: username, password: password})
+      patch('/connect', {username: username, password: password})
     end
 
     def delete_user
-      delete('/connect')
+      response = delete('/connect')
+      @access_token = nil
+      response
     end
 
     protected
 
     def get(path)
-      JSON.parse(Net::HTTP.get(URI.parse(BASE_URL + path)))
+      process(Net::HTTP::Get.new(path))
     end
 
-    def post(path, body)
-      JSON.parse(Net::HTTP.post_form(URI.parse(BASE_URL + path), body))
-    end
-
-    def put(path, body)
-      http = Net::HTTP.new(BASE_URL)
+    def post(path, params = {})
       request = Net::HTTP::Post.new(path)
-      request.set_form_data(body)
-      JSON.parse(http.request(request))
+      params.merge!(credentials)
+      params.merge!(access_token: @access_token)
+      request.set_form_data(params)
+      process(request)
+    end
+
+    def patch(path, params = {})
+      request = Net::HTTP::Patch.new(path)
+      params.merge!(credentials)
+      params.merge!(access_token: @access_token)
+      request.set_form_data(params)
+      process(request)
     end
 
     def delete(path)
-      http = Net::HTTP.new(BASE_URL)
       request = Net::HTTP::Delete.new(path)
-      JSON.parse(http.request(request))
+      request.set_form_data(credentials.merge(access_token: @access_token))
+      puts request.inspect
+      process(request)
     end
 
     private
@@ -101,6 +117,29 @@ module Plaider
           raise ArgumentError.new("#{name} is required")
         end
       end
+    end
+
+    def credentials
+      @credentials ||= {client_id: @client_id, secret: @secret}
+    end
+
+    def http
+      unless defined?(@http)
+        uri = URI.parse(BASE_URL)
+        @http = Net::HTTP.new(uri.host, uri.port)
+        @http.use_ssl = true
+        @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      end
+      @http
+    end
+
+    def process(request)
+      response = http.request(request)
+      {status_code: response.code, result: JSON.parse(response.body, {symbolize_names: true})}
+    end
+
+    def format_date(date)
+      !!date ? date.strftime(DATE_FORMAT) : date
     end
   end
 

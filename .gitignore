@@ -5,3 +5,5 @@
 public/assets
 .DS_Store
 */.DS_Store
+/coverage
+/pkg

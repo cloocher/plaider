@@ -1,29 +1,91 @@
-# Plaid
+# Plaider
+[![Build Status](https://travis-ci.org/cloocher/plaider.png)](https://travis-ci.org/cloocher/plaider)
+[![Coverage Status](https://coveralls.io/repos/cloocher/plaider/badge.png?branch=master)](https://coveralls.io/r/cloocher/plaider)
+[![Gem Version](https://badge.fury.io/rb/plaider.png)](http://badge.fury.io/rb/plaider)
 
-TODO: Write a gem description
+  Plaid API client
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Plaider is available through [Rubygems](http://rubygems.org/gems/plaider) and can be installed via:
 
-    gem 'plaid'
+```
+$ gem install plaider
+```
 
-And then execute:
+or add it to your Gemfile like this:
 
-    $ bundle
+```
+gem 'plaider'
+```
 
-Or install it yourself as:
+## Start Guide
 
-    $ gem install plaid
+Register for [Plaid](https://plaid.com/account/signup).
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'plaider'
 
-## Contributing
+# Plaider global configuration
+Plaider.configure do |config|
+  config.client_id = 'client id'
+  config.secret = 'secret'
+end
 
-1. Fork it ( https://github.com/[my-github-username]/plaid/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+# alternatively, specify configuration options when instantiating an Aggcat::Client
+client = Plaider::Client.new(
+  client_id: 'client id',
+  secret: 'secret',
+  access_token: 'scope for all requests'
+)
+
+# create an scoped client by customer_id
+client = Aggcat.scope(customer_id)
+
+# get all supported financial institutions
+client.institutions
+
+# get details for Chase
+client.institution('5301a99504977c52b60000d0')
+
+# add new financial account to aggregate from Chase
+response = client.add_user('chase', username, password, email)
+
+# in case MFA is required
+questions = response[:mfa]
+answer = 'answer'
+client.user_confirmation(answer)
+
+# get already aggregated financial accounts and transactions
+client.transactions
+
+# get all aggregated account balances
+client.balance
+
+# get account transactions
+start_date = Date.today - 30
+end_date = Date.today # optional
+pending = true # include pending transactions
+client.transactions(account_id, start_date, end_date, pending)
+
+# update user credentials
+client.update_user(new_username, new_password)
+
+# you can set scope inline for any request
+Aggcat.scope(access_request).transactions
+
+# delete user
+client.delete_user
+```
+
+## Requirements
+
+* Ruby 1.9.3 or higher
+
+## Copyright
+Copyright (c) 2014 Gene Drabkin.
+See [LICENSE][] for details.
+
+[license]: LICENSE.md
