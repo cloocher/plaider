@@ -41,40 +41,44 @@ client = Plaider::Client.new(
   access_token: 'scope for all requests'
 )
 
-# create an scoped client by customer_id
-client = Aggcat.scope(customer_id)
+# create an scoped client by access_token
+client = Aggcat.scope(access_token)
+
+# you could use default scope (no access_token) for non-user specific calls
+client = Aggcat.scope
 
 # get all supported financial institutions
 client.institutions
 
-# get details for Chase
+# get Chase Bank details
 client.institution('5301a99504977c52b60000d0')
 
 # add new financial account to aggregate from Chase
-response = client.add_user('chase', username, password, email)
+intitution_type = 'chase'
+response = client.add_user(intitution_type, username, password, email)
 
 # in case MFA is required
 questions = response[:mfa]
 answer = 'answer'
 client.user_confirmation(answer)
 
-# get already aggregated financial accounts and transactions
+# get already aggregated financial accounts and transactions for the scoped user
 client.transactions
 
-# get all aggregated account balances
+# get all account balances
 client.balance
 
-# get account transactions
+# filter transactions
 start_date = Date.today - 30
 end_date = Date.today # optional
 pending = true # include pending transactions
 client.transactions(account_id, start_date, end_date, pending)
 
 # update user credentials
-client.update_user(new_username, new_password)
+client.update_user(username, new_password)
 
 # you can set scope inline for any request
-Aggcat.scope(access_request).transactions
+Aggcat.scope(access_token).transactions
 
 # delete user
 client.delete_user
