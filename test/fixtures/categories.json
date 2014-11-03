@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "53742c8c4fd7f2f065000002",
+    "hierarchy": [
+      "Transfer",
+      "Deposit",
+      "Check"
+    ],
+    "mappings": []
+  },
+  {
+    "_id": "53742da54fd7f2f065000003",
+    "hierarchy": [
+      "Transfer",
+      "Withdrawal",
+      "Check"
+    ],
+    "mappings": []
+  },
+  {
+    "_id": "537431254fd7f2f065000004",
+    "hierarchy": [
+      "Transfer",
+      "Credit"
+    ],
+    "mappings": []
+  },
+  {
+    "_id": "537432ae4fd7f2f065000005",
+    "hierarchy": [
+      "Payment",
+      "Credit Card"
+    ],
+    "mappings": []
+  }
+]

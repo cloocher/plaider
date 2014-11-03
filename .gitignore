@@ -1,0 +1,7 @@
+/.bundle
+/log/*.log
+/tmp
+/.idea
+public/assets
+.DS_Store
+*/.DS_Store

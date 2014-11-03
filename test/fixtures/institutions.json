@@ -1,0 +1,175 @@
+[
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "User ID"
+    },
+    "has_mfa": false,
+    "id": "5301a9d704977c52b60000db",
+    "mfa": [],
+    "name": "American Express",
+    "type": "amex",
+    "products": [
+      "connect",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "Online ID"
+    },
+    "has_mfa": true,
+    "id": "5301a93ac140de84910000e0",
+    "mfa": [
+      "code",
+      "list",
+      "questions(3)"
+    ],
+    "name": "Bank of America",
+    "type": "bofa",
+    "products": [
+      "connect",
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "PIN",
+      "username": "Username or Customer Number"
+    },
+    "has_mfa": false,
+    "id": "53c5c8631f9bda09c7000222",
+    "mfa": [],
+    "name": "Capital One 360",
+    "type": "capone360",
+    "products": [
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "Login ID"
+    },
+    "has_mfa": false,
+    "id": "53b34fab1a73941962000186",
+    "mfa": [],
+    "name": "Charles Schwab",
+    "type": "schwab",
+    "products": [
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "User ID"
+    },
+    "has_mfa": true,
+    "id": "5301a99504977c52b60000d0",
+    "mfa": [
+      "code",
+      "list"
+    ],
+    "name": "Chase",
+    "type": "chase",
+    "products": [
+      "connect",
+      "auth",
+      "balance",
+      "info"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "User ID"
+    },
+    "has_mfa": true,
+    "id": "5301aa306b3f82a00500018b",
+    "mfa": [
+      "questions",
+      "selections"
+    ],
+    "name": "Citi",
+    "type": "citi",
+    "products": [
+      "connect",
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "Username"
+    },
+    "has_mfa": false,
+    "id": "53cee1d8c003c2747b000051",
+    "mfa": [],
+    "name": "Fidelity",
+    "type": "fidelity",
+    "products": [
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "pin": "PIN",
+      "username": "Online ID"
+    },
+    "has_mfa": true,
+    "id": "531ea6602ad939b68700047c",
+    "mfa": [
+      "questions(3)"
+    ],
+    "name": "USAA",
+    "type": "usaa",
+    "products": [
+      "connect",
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "Personal ID"
+    },
+    "has_mfa": true,
+    "id": "531ea6327de8211c80000440",
+    "mfa": [
+      "questions(1)"
+    ],
+    "name": "US Bank",
+    "type": "us",
+    "products": [
+      "connect",
+      "auth",
+      "balance"
+    ]
+  },
+  {
+    "credentials": {
+      "password": "Password",
+      "username": "Username"
+    },
+    "has_mfa": false,
+    "id": "5301aa096b3f822b440001cb",
+    "mfa": [],
+    "name": "Wells Fargo",
+    "type": "wells",
+    "products": [
+      "connect",
+      "auth",
+      "balance",
+      "info"
+    ]
+  }
+]

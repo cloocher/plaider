@@ -1,0 +1,19 @@
+{
+  "_id": "539c40548590c9d05eaec20a",
+  "name": "Apple Store",
+  "_category": {
+    "_id": "52544965f71e87d00700018a",
+    "hierarchy": {
+      "0": "Shops",
+      "1": "Computers and Electronics",
+      "2": ""
+    }
+  },
+  "meta": {
+    "location": {
+      "address": "1 Stockton St",
+      "city": "San Francisco",
+      "state": "CA"
+    }
+  }
+}

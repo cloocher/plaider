@@ -1,0 +1,15 @@
+{
+  "credentials": {
+    "password": "Password",
+    "username": "User ID"
+  },
+  "has_mfa": false,
+  "id": "5301a9d704977c52b60000db",
+  "mfa": [],
+  "name": "American Express",
+  "type": "amex",
+  "products": [
+    "connect",
+    "balance"
+  ]
+}

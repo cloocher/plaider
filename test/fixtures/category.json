@@ -1,0 +1,35 @@
+{
+  "_id": "52544965f71e87d007000008",
+  "hierarchy": [
+    "Arts and Entertainment",
+    "Circuses and Carnivals"
+  ],
+  "mappings": [
+    {
+      "map_type": "foursquare",
+      "hierarchy": [
+        "Professional & Other Places",
+        "Fair",
+        ""
+      ]
+    },
+    {
+      "map_type": "factual",
+      "hierarchy": [
+        "Social",
+        "Entertainment",
+        "Circuses",
+        ""
+      ]
+    },
+    {
+      "map_type": "factual",
+      "hierarchy": [
+        "Social",
+        "Entertainment",
+        "Carnivals",
+        ""
+      ]
+    }
+  ]
+}

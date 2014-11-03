@@ -1,0 +1,5 @@
+{
+  "code": 1200,
+  "message": "invalid credentials",
+  "resolve": "The username or password provided were not correct."
+}

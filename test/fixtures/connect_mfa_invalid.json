@@ -1,0 +1,5 @@
+{
+  "code": 1203,
+  "message": "invalid mfa",
+  "resolve": "The MFA response provided was not correct."
+}

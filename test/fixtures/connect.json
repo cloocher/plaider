@@ -1,0 +1,516 @@
+{
+  "accounts": [
+    {
+      "_id": "52db1be4be13cbc36e000004",
+      "_item": "52af631671c3bd1b25000064",
+      "_user": "52af630f71c3bd1b25000063",
+      "balance": {
+        "available": 1203.42,
+        "current": 1274.93
+      },
+      "institution_type": "fake_institution",
+      "meta": {
+        "number": "9606",
+        "name": "Plaid Savings"
+      },
+      "type": "depository"
+    },
+    {
+      "_id": "52db1be4be13cbc36e000005",
+      "_item": "52af631671c3bd1b25000064",
+      "_user": "52af630f71c3bd1b25000063",
+      "balance": {
+        "available": 1081.78,
+        "current": 1253.32
+      },
+      "institution_type": "fake_institution",
+      "meta": {
+        "number": "1702",
+        "name": "Plaid Checking"
+      },
+      "type": "depository"
+    },
+    {
+      "_id": "52db1be4be13cbc36e000007",
+      "_item": "52af631671c3bd1b25000064",
+      "_user": "52af630f71c3bd1b25000063",
+      "balance": {
+        "available": 7205.23,
+        "current": 7255.23
+      },
+      "institution_type": "fake_institution",
+      "meta": {
+        "number": "5204",
+        "name": "Plaid Premier Checking"
+      },
+      "type": "depository"
+    },
+    {
+      "_id": "52db1be4be13cbc36e000006",
+      "_item": "52af631671c3bd1b25000064",
+      "_user": "52af630f71c3bd1b25000063",
+      "balance": {
+        "available": 9930,
+        "current": 2275.58
+      },
+      "institution_type": "fake_institution",
+      "meta": {
+        "limit": 12500,
+        "number": "93002",
+        "name": "Plaid Credit Card"
+      },
+      "type": "credit"
+    }
+  ],
+  "transactions": [
+    {
+      "_account": "52db1be4be13cbc36e000006",
+      "_entity": "539c40548590c9d05eaec20a",
+      "_id": "53b204dffda49edae5000010",
+      "amount": 2307.15,
+      "date": "2014-06-23",
+      "name": "Apple Store",
+      "meta": {
+        "location": {
+          "address": "1 Stockton St",
+          "city": "San Francisco",
+          "state": "CA"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "address": 1,
+          "city": 1,
+          "name": 1,
+          "state": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Shops",
+        "Computers and Electronics"
+      ],
+      "category_id": "52544965f71e87d00700018a"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20530fda49edae500001a",
+      "_id": "53b204d9fda49edae500000f",
+      "amount": 3.19,
+      "date": "2014-06-21",
+      "name": "Gregorys Coffee",
+      "meta": {
+        "location": {
+          "address": "874 Avenue of the Americas",
+          "city": "New York",
+          "state": "NY"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "state": 1,
+          "name": 1,
+          "city": 1,
+          "address": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Food and Drink",
+        "Restaurants",
+        "Coffee Shop"
+      ],
+      "category_id": "52544965f71e87d00700005d"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b2052afda49edae5000019",
+      "_id": "53b204d4fda49edae500000e",
+      "amount": 80,
+      "date": "2014-06-08",
+      "name": "ATM Withdrawal",
+      "meta": {
+        "location": {
+          "city": "San Francisco",
+          "state": "CA"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "state": 1,
+          "city": 1
+        }
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Withdrawal",
+        "ATM"
+      ],
+      "category_id": "5374277870d8a0ac6500001c"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000004",
+      "_entity": "53b20522fda49edae5000018",
+      "_id": "53b204cefda49edae500000d",
+      "amount": -240,
+      "date": "2014-06-02",
+      "name": "Online Transfer from Chk ...1702",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Deposit"
+      ],
+      "category_id": "5374271970d8a0ac6500000a"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20519fda49edae5000017",
+      "_id": "53b204c9fda49edae500000c",
+      "amount": 240,
+      "date": "2014-06-01",
+      "name": "Online Transfer to Sav ...9606",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Account Transfer"
+      ],
+      "category_id": "5374272370d8a0ac6500000c"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20510fda49edae5000016",
+      "_id": "53b204c4fda49edae500000b",
+      "amount": -0.93,
+      "date": "2014-05-17",
+      "name": "Interest Payment",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "unresolved"
+      },
+      "category": [
+        "Interest"
+      ],
+      "category_id": "537426db70d8a0ac65000005"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000006",
+      "_entity": "53aadb96e4ec365c5384db1f",
+      "_id": "53b204bafda49edae500000a",
+      "amount": 12.74,
+      "date": "2014-05-12",
+      "name": "Golden Crepes",
+      "meta": {
+        "location": {
+          "address": "262 W 15th St",
+          "city": "New York",
+          "state": "NY",
+          "coordinates": {
+            "lng": -74.001761,
+            "lat": 40.740352
+          }
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "address": 1,
+          "city": 1,
+          "name": 1,
+          "state": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Food and Drink",
+        "Restaurants"
+      ],
+      "category_id": "52544965f71e87d00700004c"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20507fda49edae5000015",
+      "_id": "53b204affda49edae5000008",
+      "amount": 7.23,
+      "date": "2014-05-09",
+      "name": "Krankies Coffee",
+      "meta": {
+        "location": {
+          "address": "211 E 3rd St",
+          "city": "Winston Salem",
+          "state": "NC"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "city": 1,
+          "name": 1,
+          "state": 1,
+          "address": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Food and Drink",
+        "Restaurants",
+        "Coffee Shop"
+      ],
+      "category_id": "52544965f71e87d00700005d"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000006",
+      "_entity": "53adc1b4f48a62f6697f2146",
+      "_id": "53b204a9fda49edae5000007",
+      "amount": 118.23,
+      "date": "2014-04-26",
+      "name": "Banana Republic",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "digital"
+      },
+      "category": [
+        "Shops",
+        "Digital Purchase"
+      ],
+      "category_id": "52544965f71e87d007000193"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20500fda49edae5000015",
+      "_id": "53b204a3fda49edae5000007",
+      "amount": -800,
+      "date": "2014-04-20",
+      "name": "Venmo Cashout 18375552",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Third Party",
+        "Venmo"
+      ],
+      "category_id": "5374273970d8a0ac65000010"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000005",
+      "_entity": "53b20500fda49edae5000014",
+      "_id": "53b204a3fda49edae5000006",
+      "amount": 120,
+      "date": "2014-04-19",
+      "name": "Venmo Payment 16991172",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Third Party",
+        "Venmo"
+      ],
+      "category_id": "5374273970d8a0ac65000010"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000006",
+      "_entity": "53ad80bbe4ec365c53900b4c",
+      "_id": "53b20496fda49edae5000004",
+      "amount": 5.32,
+      "date": "2014-04-17",
+      "name": "Octane Coffee Bar and Lounge",
+      "meta": {
+        "location": {
+          "address": "1009 Marietta St Nw # B",
+          "city": "Atlanta",
+          "state": "GA"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "address": 1,
+          "city": 1,
+          "name": 1,
+          "state": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Food and Drink",
+        "Restaurants",
+        "Coffee Shop"
+      ],
+      "category_id": "52544965f71e87d00700005d"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000006",
+      "_entity": "52b398a3573660b2540021b0",
+      "_id": "53b2048dfda49edae5000003",
+      "amount": 28.57,
+      "date": "2014-04-11",
+      "name": "Papa John's Pizza",
+      "meta": {
+        "location": {
+          "address": "2625 David Dr",
+          "city": "Metairie",
+          "state": "LA",
+          "zip": "70003",
+          "coordinates": {
+            "lat": 29.999986,
+            "lng": -90.21869
+          }
+        },
+        "contact": {
+          "telephone": "5044557272"
+        },
+        "ids": {
+          "factual": "616f53b5-917e-4810-9540-b6cdbb272916",
+          "foursquare": "4bc89efb15a7ef3b587a7bda"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "name": 1,
+          "state": 1,
+          "address": 1
+        }
+      },
+      "type": {
+        "primary": "place"
+      },
+      "category": [
+        "Food and Drink",
+        "Restaurants",
+        "Pizza"
+      ],
+      "category_id": "52544965f71e87d00700007c"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000004",
+      "_entity": "53b204eefda49edae5000012",
+      "_id": "53b20479fda49edae5000001",
+      "amount": -3042.44,
+      "date": "2014-03-27",
+      "name": "Company Payroll",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Payroll"
+      ],
+      "category_id": "5374275870d8a0ac65000016"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000007",
+      "_entity": "53d193330cad05f97a000002",
+      "_id": "53d1932c0cad05f97a000001",
+      "amount": 200,
+      "date": "2014-07-21",
+      "name": "ATM Withdrawal",
+      "meta": {
+        "location": {
+          "city": "San Francisco",
+          "state": "CA"
+        }
+      },
+      "pending": false,
+      "score": {
+        "master": 1,
+        "detail": {
+          "state": 1,
+          "city": 1
+        }
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Withdrawal",
+        "ATM"
+      ],
+      "category_id": "5374277870d8a0ac6500001c"
+    },
+    {
+      "_account": "52db1be4be13cbc36e000007",
+      "_entity": "53d194280cad05f97a000004",
+      "_id": "53d194230cad05f97a000003",
+      "amount": 240,
+      "date": "2014-07-24",
+      "name": "Online Transfer from External Sav ...3092",
+      "meta": {},
+      "pending": false,
+      "score": {
+        "master": 1
+      },
+      "type": {
+        "primary": "special"
+      },
+      "category": [
+        "Transfer",
+        "Account Transfer"
+      ],
+      "category_id": "5374272370d8a0ac6500000c"
+    }
+  ],
+  "access_token": "test"
+}
