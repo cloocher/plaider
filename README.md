@@ -1,6 +1,6 @@
 # Plaider
 [![Build Status](https://travis-ci.org/cloocher/plaider.png)](https://travis-ci.org/cloocher/plaider)
-[![Coverage Status](https://img.shields.io/coveralls/cloocher/plaider.svg)](https://coveralls.io/r/cloocher/plaider)
+[![Coverage Status](https://coveralls.io/repos/cloocher/plaider/badge.png)](https://coveralls.io/r/cloocher/plaider)
 [![Gem Version](https://badge.fury.io/rb/plaider.png)](http://badge.fury.io/rb/plaider)
 
 
