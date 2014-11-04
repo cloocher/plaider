@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'simplecov'
 require 'coveralls'
 
+Coveralls.wear!
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
@@ -14,7 +15,7 @@ require 'webmock/test_unit'
 require 'test/unit'
 require 'plaider'
 
-WebMock.disable_net_connect!(:allow => 'coveralls.io')
+WebMock.disable_net_connect!(allow: 'coveralls.io')
 
 def stub_delete(path)
   stub_request(:delete, Plaider::Client::BASE_URL + path)
