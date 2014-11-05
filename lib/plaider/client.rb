@@ -89,7 +89,7 @@ module Plaider
     def post(path, params = {})
       request = Net::HTTP::Post.new(path)
       params.merge!(credentials)
-      params.merge!(access_token: @access_token)
+      params.merge!(access_token: @access_token) if !!@access_token
       request.set_form_data(params)
       process(request)
     end
@@ -97,14 +97,14 @@ module Plaider
     def patch(path, params = {})
       request = Net::HTTP::Patch.new(path)
       params.merge!(credentials)
-      params.merge!(access_token: @access_token)
+      params.merge!(access_token: @access_token) if !!@access_token
       request.set_form_data(params)
       process(request)
     end
 
     def delete(path)
       request = Net::HTTP::Delete.new(path)
-      request.set_form_data(credentials.merge(access_token: @access_token))
+      request.set_form_data(credentials.merge(access_token: @access_token)) if !!@access_token
       puts request.inspect
       process(request)
     end
