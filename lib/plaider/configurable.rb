@@ -1,7 +1,7 @@
 module Plaider
   module Configurable
 
-    KEYS = [:client_id, :secret, :access_token, :open_timeout, :read_timeout]
+    KEYS = [:client_id, :secret, :access_token, :environment, :open_timeout, :read_timeout, :verbose]
 
     attr_writer *KEYS
 

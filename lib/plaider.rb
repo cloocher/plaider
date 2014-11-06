@@ -7,8 +7,7 @@ module Plaider
     include Plaider::Configurable
 
     def scope(access_token = nil)
-      if !defined?(@access_token) || @access_token != access_token
-        @access_token = access_token
+      if !defined?(@client) || @client.access_token != access_token
         @client = Plaider::Client.new(options.merge({access_token: access_token}))
       end
       @client

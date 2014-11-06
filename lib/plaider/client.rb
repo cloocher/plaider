@@ -4,7 +4,8 @@ require 'json'
 module Plaider
   class Client
 
-    BASE_URL = 'https://tartan.plaid.com'
+    DEV_BASE_URL = 'https://tartan.plaid.com'
+    PROD_BASE_URL = 'https://api.plaid.com'
 
     DATE_FORMAT = '%Y-%m-%d'
 
@@ -49,7 +50,7 @@ module Plaider
 
     def add_user(institution_type, username, password, email)
       validate(institution_type: institution_type, username: username, password: password, email: email)
-      response = post('/connect', {type: institution_type, username: username, password: password, email: email})
+      response = post('/connect', {type: institution_type, username: username, password: password, email: email, login_only: true})
       status_code = response[:status_code].to_i
       @access_token = response[:result][:access_token] if [200, 201].include?(status_code)
       response
@@ -80,6 +81,10 @@ module Plaider
       response
     end
 
+    def access_token
+      @access_token
+    end
+
     protected
 
     def get(path)
@@ -105,7 +110,6 @@ module Plaider
     def delete(path)
       request = Net::HTTP::Delete.new(path)
       request.set_form_data(credentials.merge(access_token: @access_token)) if !!@access_token
-      puts request.inspect
       process(request)
     end
 
@@ -125,10 +129,11 @@ module Plaider
 
     def http
       unless defined?(@http)
-        uri = URI.parse(BASE_URL)
+        uri = URI.parse(@environment == 'production' ? PROD_BASE_URL : DEV_BASE_URL)
         @http = Net::HTTP.new(uri.host, uri.port)
         @http.use_ssl = true
         @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        @http.set_debug_output($stdout) if @verbose
       end
       @http
     end

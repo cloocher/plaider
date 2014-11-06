@@ -15,12 +15,16 @@ class PlaiderTest < Test::Unit::TestCase
       config.access_token = 'access_token'
       config.open_timeout = 5
       config.read_timeout = 30
+      config.verbose = true
+      config.environment = 'development'
     end
     assert_equal 'client_id', configurable.instance_variable_get(:'@client_id')
     assert_equal 'secret', configurable.instance_variable_get(:'@secret')
     assert_equal 'access_token', configurable.instance_variable_get(:'@access_token')
+    assert_equal 'development', configurable.instance_variable_get(:'@environment')
     assert_equal 5, configurable.instance_variable_get(:'@open_timeout')
     assert_equal 30, configurable.instance_variable_get(:'@read_timeout')
+    assert_equal true, configurable.instance_variable_get(:'@verbose')
   end
 
   def test_scope

@@ -18,23 +18,23 @@ require 'plaider'
 WebMock.disable_net_connect!(allow: 'coveralls.io')
 
 def stub_delete(path)
-  stub_request(:delete, Plaider::Client::BASE_URL + path)
+  stub_request(:delete, Plaider::Client::DEV_BASE_URL + path)
 end
 
 def stub_get(path)
-  stub_request(:get, Plaider::Client::BASE_URL + path)
+  stub_request(:get, Plaider::Client::DEV_BASE_URL + path)
 end
 
 def stub_post(path)
-  stub_request(:post, Plaider::Client::BASE_URL + path)
+  stub_request(:post, Plaider::Client::DEV_BASE_URL + path)
 end
 
 def stub_put(path)
-  stub_request(:put, Plaider::Client::BASE_URL + path)
+  stub_request(:put, Plaider::Client::DEV_BASE_URL + path)
 end
 
 def stub_patch(path)
-  stub_request(:patch, Plaider::Client::BASE_URL + path)
+  stub_request(:patch, Plaider::Client::DEV_BASE_URL + path)
 end
 
 def fixture_path
