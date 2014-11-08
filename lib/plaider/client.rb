@@ -66,7 +66,7 @@ module Plaider
       params[:account_id] = account_id if account_id
       params[:gte] = format_date(start_date)
       params[:lte] = format_date(end_date)
-      params[:pending] = account_id if pending
+      params[:pending] = pending
       post('/connect/get', params)
     end
 
