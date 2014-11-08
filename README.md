@@ -33,6 +33,7 @@ require 'plaider'
 Plaider.configure do |config|
   config.client_id = 'client id'
   config.secret = 'secret'
+  config.environment = 'production' # default: 'development'
 end
 
 # alternatively, specify configuration options when instantiating an Aggcat::Client
